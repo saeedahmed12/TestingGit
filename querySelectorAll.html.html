@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Inputs</title>
+
+			         <!-- Bootstrap core CSS -->
+
+			<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+			    <!-- Tufte-->
+			<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.css"/>
+			<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/latex.css"/>
+
+			<style>
+				td {
+					cursor: pointer;
+					padding: 10px;
+					border-left: solid;	
+					border-top: solid;
+					border-right: solid;
+					border-bottom: solid;
+					margin: 5px;
+					text-align: center;
+				}
+			</style>
+
+
+</head>
+<body>
+	<article><section>
+
+		<h2>This will illustrate querySelectorAll</h2>
+		<h2>the table below will be used for an example</h2>
+		<p>--this is to allow insertion of multiple consecutive event listeners and allow them to use their respective indices</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Column1</th>
+					<th>Column2</th>
+					<th>Column3</th>
+					<tbody>
+						<tr>
+							<td>A</td>
+							<td>B</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>D</td>
+							<td>E</td>
+							<td>F</td>
+						</tr>
+						<tr>
+							<td>G</td>
+							<td>H</td>
+							<td>I</td>
+						</tr>
+					</tbody>
+				</tr>
+			</thead>
+		</table>
+        
+        <h3>Instructions </h3>
+        <p><input type="checkbox" id="mn-figure-1" class="margin-toggle"/><span class="marginnote">Here is a <a href="https://www.nickang.com/add-event-listener-for-loop-problem-in-javascript/" target="_blank">reference</a> for this</span></p>
+        <ul>
+		<li>view source to see HTML</li>
+		<li>In the HTML, note script tag, which defines Cells as a collection of all td's</li>
+		<li>Below that, there is a short script that adds an event listener to each td, and displays its innerHTML</li>
+		<li>the commented out line below the line that adds event listener will use the index and display it</li>
+        </ul>
+		
+
+    </section></article>
+
+	<script>
+
+	var Cells = document.querySelectorAll("td")
+
+	Cells.forEach(function(cell,index) {
+		cell.addEventListener("click", function(){alert(cell.innerHTML)});
+		// cell.addEventListener("click", f = () => alert(index));
+	});
+
+	// Cells[0].addEventListener("click", f = () => console.log(Cells[0].innerHTML))
+
+	</script>
+
+	    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="https://getbootstrap.com/docs/3.3/assets/js/vendor/jquery.min.js')
+    </script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="script.js" ></script>
+  
+</body>
+</html>
+
