@@ -25,6 +25,11 @@
 					margin: 5px;
 					text-align: center;
 				}
+				
+				.COL {
+				color: pink;
+				}	
+
 			</style>
 
 
@@ -72,7 +77,42 @@
         </ul>
 		
 
-    </section></article>
+    </section>
+	<hr>
+	<section>
+
+
+		
+	<h2>Example:  use of number input, button, addEventListener, removeEventListener, toggle class</h2>
+	<h1><span id="score1" class='t'></span> to <span id="score2" class='t' ></span></h1>
+	
+	<h3>Playing to: <span id="topscore"></span></h3>
+
+
+	<input id="mySelect" type="number" value="0" onclick="TopScore()" autocomplete="off">     <!-- https://stackoverflow.com/questions/1799899/html-input-value-kept-after-refresh -->
+
+	<input id="player1" type="button" value="player1">
+	<input id="player2" type="button" value="player2">
+	<input id='reset' type="button" value="reset">
+    
+    <!-- ----------------------- -->
+	<hr style="margin-top: 100px">
+	<h2>Example: add arguments to function inside an eventlistener using a secondary function
+	</h2>
+     
+    <form >
+    <textarea name="textarea" id="textarea" cols="10" rows="5" placeholder="put in a number; it will be multiplied by 2"  autocomplete="off"></textarea>
+	<input type="button" id="testArg" value="click to test Argument in addEventListener" style="margin-top: 100px; width:300px">
+	</form>
+    <p id='demo'></p>
+
+
+
+
+    
+    </section>
+	
+	</article>
 
 	<script>
 
@@ -87,17 +127,74 @@
 
 	</script>
 
-	    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+		//selection will change to in h3 based on its value (take value from myselect and put in h3 span)
+
+
+		var count1 = 0
+		document.getElementById("score1").innerHTML = count1
+		var count2 = 0
+		document.getElementById("score2").innerHTML = count2
+
+
+
+        document.querySelector("#player1").addEventListener("click",  f1 )
+		document.querySelector("#player2").addEventListener("click",  f2 ) 
+  
+
+  		function f1() {count1 = count1 + 1; document.getElementById("score1").innerHTML = count1
+  		     if (count1 == document.querySelector("#mySelect").value) { 
+  		     	document.querySelector("#player1").removeEventListener("click", f1)
+				document.querySelector("#player2").removeEventListener("click", f2)
+				document.querySelector("#score1").style.color = "pink"
+				}
+			}
+
+  														
+  		function f2() {count2 = count2 + 1; document.getElementById("score2").innerHTML = count2
+  		     if (count2== document.querySelector("#mySelect").value) { 
+  		     	document.querySelector("#player1").removeEventListener("click", f1)
+				document.querySelector("#player2").removeEventListener("click", f2)
+				document.querySelector("#score2").style.color = "pink"
+				}
+  			}
+
+
+
+		function TopScore() {
+            var Select = document.querySelector("#mySelect").value
+			document.getElementById("topscore").innerHTML = Select
+        }
+
+
+        
+		document.querySelector("#reset").addEventListener("click", f)
+		function f() {
+			document.getElementById("score1").innerHTML = 0;
+			document.getElementById("score2").innerHTML = 0;
+			document.querySelector("#score1").style.color ="black"
+			document.querySelector("#score2").style.color = "black"
+		}
+
+
+		document.querySelector("#reset").addEventListener("mouseover", TOGGLE)
+		function TOGGLE() {
+			document.querySelector("#score1").classList.toggle("COL");
+		}
+		
+
+	</script>
+
+
+
     <script>
-      window.jQuery || document.write('<script src="https://getbootstrap.com/docs/3.3/assets/js/vendor/jquery.min.js')
+    	X = document.querySelector("#testArg")
+
+    	X.addEventListener("click", function(){g(document.getElementById("textarea").value)})
+
+    	function g(n){alert(2*n)}
     </script>
-    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="script.js" ></script>
+
   
 </body>
 </html>
