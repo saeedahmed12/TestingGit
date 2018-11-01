@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>list exercise</title>
+
+			         <!-- Bootstrap core CSS -->
+
+<!-- 			<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+			    <!-- Tufte-->
+			<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.css"/>
+			<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/latex.css"/>
+
+
+			<style>
+				li:hover {
+					color: red;
+				}
+			</style>
+
+
+</head>
+<body>
+	<article>
+		<section>
+			<ul>
+				<li>go to gym</li>
+				<li>estate planning</li>
+				<li>clean car</li>
+			</ul>
+			<p>Here we look at querySelectorAll and then adding event listeners to all the li's, first using repeated code, and 2nd using forEach</p>
+		</section>
+	</article>
+
+
+	<script>
+		//select each li and add event listener
+		var listItems = document.querySelectorAll ('li')
+        
+		// listItems[0].addEventListener('click', f = () => listItems[0].style.textDecoration = "line-through")
+		// listItems[0].addEventListener('dblclick', f = () => listItems[0].style.textDecoration = "none")
+		// listItems[0].addEventListener('mouseover', f = () => listItems[0].style.cursor = "pointer")
+
+		// listItems[1].addEventListener('click', f = () => listItems[1].style.textDecoration = "line-through")
+		// listItems[1].addEventListener('dblclick', f = () => listItems[1].style.textDecoration = "none")
+		// listItems[1].addEventListener('mouseover', f = () => listItems[1].style.cursor = "pointer")
+
+		// listItems[2].addEventListener('click', f = () => listItems[2].style.textDecoration = "line-through")
+		// listItems[2].addEventListener('dblclick', f = () => listItems[2].style.textDecoration = "none")
+		// listItems[2].addEventListener('mouseover', f = () => listItems[2].style.cursor = "pointer")
+
+		listItems.forEach(function(item,index) {
+			item.addEventListener('click', f = () => item.style.textDecoration = "line-through")
+			item.addEventListener('dblclick', f = () => item.style.textDecoration = "none")
+			item.addEventListener('mouseover', f = () => item.style.cursor = "pointer")
+		} )
+
+
+	</script>
+
+  
+</body>
+</html>
+
