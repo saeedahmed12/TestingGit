@@ -1,3 +1,6 @@
 1. in object, refer to itself
 2. in jQuery - $(this).hide() - hides the current element.
 3. in forEach 
+
+
+Variables declared without 'var' or 'let' in function become global
