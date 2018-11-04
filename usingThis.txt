@@ -4,3 +4,5 @@
 
 
 Variables declared without 'var' or 'let' in function become global
+
+inline vs inline-black    https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
