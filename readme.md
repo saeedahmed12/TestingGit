@@ -11,5 +11,12 @@ If changes made remotely, then this worked (but need to be careful) to bring bac
 git pull https://github.com/saeedahmed12/TestingGit.git
 
 
+How to use with Atom:
+1.  First put a 'git' in folder of interest:
+-in command palette in Atom, type 'git clone'
+-enter the respository's url
+-enter local folder path
 
+2. 'Toggle Git Tab'
 
+3.  Stage, commit, push
