@@ -31,6 +31,6 @@ How to use in sublime text 3, using (sublime git)
 If git already in place in local folder (this worked even though the local repo had been set up in atom)
 1. In command palette (ctrl-shift-p) type 'git s' to open status
 2. In status type 's' for stage, 'c' for commit (there is also a git: quick commit command)
-3. If remote repository has been set up, then use 'git push current branch'
+3. If remote repository has been set up, then use git push (or in some cases git push current branch)
 
 if git has not been set up locally, then follow instructions in tutorial to set it up, or use the process above in Atom.
