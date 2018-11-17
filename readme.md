@@ -12,6 +12,7 @@ git pull https://github.com/saeedahmed12/TestingGit.git
 
 
 How to use with Atom:
+(see this video:https://www.youtube.com/watch?v=TzKi6ZZtIAo)
 1.  First put a 'git' in folder of interest:
 -in command palette in Atom, type 'git clone'
 -enter the respository's url
