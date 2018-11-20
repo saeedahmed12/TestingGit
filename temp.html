@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="BS4 with Tufte">
+    <meta charset="utf-8" />
+    <title>VBA ref table</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        td {
+            border: 0.5px solid blue;
+        }
+
+        body  {
+            background-color: rgb(230,240,240);
+        }
+
+        code, .code {
+            background-color: rgb(250,250,250);
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+ <div class="container">
+
+<table  id="t416641">
+<thead>
+
+      <tr>
+            <th  id="t416641_row_0col_0">Topic</th>
+            <th  id="t416641_row_0col_1">Template/Examples</th>
+       </tr>
+
+</thead>
+<tbody>
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Datatypes</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples"><a href="https://www.dropbox.com/s/qom4tpad631j3zd/vba_DataTypes.pdf?dl=0">link to VBA ref</a></td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Operators</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">+    *   /  -  ^  \ MOD = <br> <a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference//operators/comparison-operators">Comparison</a><br>
+                <a href="https://www.excel-easy.com/vba/examples/logical-operators.html">logical</a></td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Variables and Constant</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">Dim X As Variant <br> Static X As Long <br> Private Y As Integer <br> Public Z as Long <br> 
+            Public Const power2 As Integer = 2</td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Workbook/Worksheet Objects</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples"><a href="https://www.excel-easy.com/vba/workbook-worksheet-object.html">Excel Easy</a>
+                <br> <code>Application.Workbooks("create-a-macro").Worksheets(1).Range("A1").Value = "Hello"</code> <br>
+                Workbooks collection contains all the Workbook objects that are currently open. The Worksheets collection contains all the Worksheet objects in a workbook <br>    
+            </td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Range Objects</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">
+                
+            <code>Range("A1:A2,B3:C4").Value = 10</code> <br>
+            <code>Range("Prices").Value = 15</code> <br>
+            <code>Range(Cells(1, 1), Cells(4, 1)).Value = 5</code> <br><br>
+            <code>Dim example As Range <br>
+            Set example = Range("A1:C4") example.Select</code> <br><br>
+            <code>Dim example As Range <br>    
+            Set example = Range("A1:C4") example.Rows(3).Select</code><br>
+
+            </td>
+       </tr>
+
+        <tr>
+            <td headers="t416641_row_0col_0" data-header="Topic">Conditionals</td>
+            <td headers="t416641_row_0col_1" data-header="Template/Examples">
+                <pre class="code">
+                If LRegion ="N" Then
+                   LRegionName = "North"
+
+                ElseIf LRegion = "S" Then
+                   LRegionName = "South"
+
+                ElseIf LRegion = "E" Then
+                   LRegionName = "East"
+
+                Else
+                   LRegionName = "West"
+
+                End If
+                </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td headers="t416641_row_0col_0" data-header="Topic">Loops</td>
+            <td headers="t416641_row_0col_1" data-header="Template/Examples">
+                <pre class="code">
+
+                    Dim i As Integer
+                    For i = 1 To 6
+                        Cells(i, 1).Value = 100
+                    Next i
+
+                    Dim i As Integer, j As Integer
+                    For i = 1 To 6
+                        For j = 1 To 2
+                            Cells(i, j).Value = 100
+                        Next j
+                    Next i
+ 
+                    Dim c As Integer, i As Integer, j As Integer
+                    For c = 1 To 3
+                        For i = 1 To 6
+                            For j = 1 To 2
+                                Worksheets(c).Cells(i, j).Value = 100
+                            Next j
+                        Next i
+                    Next c
+
+
+                    Dim i As Integer
+                    i = 1
+                    Do While i < 6
+                        Cells(i, 1).Value = 20
+                        i = i + 1
+                    Loop
+
+
+                </pre>
+            </td>
+        </tr>
+
+</tbody>
+</table>
+
+
+
+    <hr>
+
+    <h2>Misc</h2>
+    <ul>
+        <li>Inserting buttons with 'alt' will allow them to stay in cell contours</li>
+    </ul>
+    
+    
+      <div class="moz-reader-content line-height4 reader-show-element"><div id="readability-page-1" class="page"><div>
+              <h2>From 'excel-easy.com'</h2>
+              
+              <p><a href="https://www.excel-easy.com/vba/create-a-macro.html">Create a Macro</a>: With Excel VBA you can automate tasks in Excel by writing so called macros. In this chapter, learn how to create a simple <strong>macro</strong>.</p>
+              <p><a href="https://www.excel-easy.com/vba/msgbox.html">MsgBox</a>: The MsgBox is a dialog box in Excel VBA you can use to inform the users of your program.</p>
+              <p><a href="https://www.excel-easy.com/vba/workbook-worksheet-object.html">Workbook and Worksheet Object</a>: Learn more about the Workbook and Worksheet object in Excel VBA.</p>
+              <p><a href="https://www.excel-easy.com/vba/range-object.html">Range Object</a>: The Range object, which is the representation of a cell (or cells) on your worksheet, is the most important object of Excel VBA.</p>
+
+              <p style="text-align: center"><a href="https://1drv.ms/x/s!Aga_4YO2d91u7ktIuOUt7I_fjWUy">Worksheet and Range object practice</a></p>
+              <p><a href="https://www.excel-easy.com/vba/variables.html">Variables</a>: This chapter teaches you how to declare, initialize and display a&nbsp;variable&nbsp;in Excel VBA.</p>
+              <p><a href="https://www.excel-easy.com/vba/if-then-statement.html">If Then Statement</a>: Use the If Then statement in Excel VBA to execute code lines if a specific condition is met.</p>
+              <p><a href="https://www.excel-easy.com/vba/loop.html">Loop</a>: Looping is one of the most powerful programming techniques. A loop in Excel VBA enables you to loop through a range of cells with just a few codes lines.</p>
+              <p><a href="https://www.excel-easy.com/vba/macro-errors.html">Macro Errors</a>: This chapter teaches you how to deal with macro errors in Excel.</p>
+              <p><a href="https://www.excel-easy.com/vba/string-manipulation.html">String Manipulation</a>: In this chapter, you'll find the most important functions to manipulate strings in Excel VBA.</p>
+              <p> <a href="https://www.excel-easy.com/vba/date-time.html">Date and Time</a>: Learn how to work with dates and times in Excel VBA.</p>
+              <p> <a href="https://www.excel-easy.com/vba/events.html">Events</a>: Events are actions performed by users which trigger Excel VBA to execute code.</p>
+              <p> <a href="https://www.excel-easy.com/vba/array.html">Array</a>: An array is a group of variables. In Excel VBA, you can refer to a specific varble (element) of an&nbsp;array&nbsp;by using the array name and the index number.</p>
+              <p><a href="https://www.excel-easy.com/vba/function-sub.html">Function and Sub</a>: In Excel VBA, a function can return a value while a sub cannot.</p>
+              <p> <a href="https://www.excel-easy.com/vba/application-object.html">Application Object</a>: The mother of all objects is Excel itself. We call it the Application object. The application object gives access to a lot of Excel related options.</p>
+              <p> <a href="https://www.excel-easy.com/vba/activex-controls.html">ActiveX Controls</a>: Learn how to create ActiveX controls such as command buttons, text boxes, list boxes etc.</p>
+              <p> <a href="https://www.excel-easy.com/vba/userform.html">Userform</a>: This chapter teaches you how to create an Excel VBA Userform.</p>
+              <p>Want to learn much more about VBA programming in Excel? <span>You can find related examples and features on the right side of each chapter.</span> Check out all <a href="https://www.excel-easy.com/examples.html#vba">100 related examples and features</a>.</p>
+              </div></div></div>
+    </div>
+
+    <div>
+      <div class="reader-message"></div>
+    </div>
+
+
+                <!-- xxxxxxxxxxxxxxxxxxx-->
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   
+</body>
+
+</html>
+<!-- https://www.codeply.com/go/EuirMfjkYZ -->

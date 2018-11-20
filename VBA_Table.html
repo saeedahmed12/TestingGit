@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="BS4 with Tufte">
+    <meta charset="utf-8" />
+    <title>VBA ref table</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        td {
+            border: 0.5px solid blue;
+        }
+
+        body  {
+            background-color: rgb(230,240,240);
+        }
+
+        code, .code {
+            background-color: rgb(250,250,250);
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+ <div class="container">
+
+<table  id="t416641">
+<thead>
+
+      <tr>
+            <th  id="t416641_row_0col_0">Topic</th>
+            <th  id="t416641_row_0col_1">Template/Examples</th>
+       </tr>
+
+</thead>
+<tbody>
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Datatypes</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples"><a href="https://www.dropbox.com/s/qom4tpad631j3zd/vba_DataTypes.pdf?dl=0">link to VBA ref</a></td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Operators</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">+    *   /  -  ^  \ MOD = <br> <a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference//operators/comparison-operators">Comparison</a><br>
+                <a href="https://www.excel-easy.com/vba/examples/logical-operators.html">logical</a></td>
+       </tr>
+
+        <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">
+            Strings</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">
+            <a href="#strings">String Ref</a>
+
+            </td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Variables and Constant</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">Dim X As Variant <br> Static X As Long <br> Private Y As Integer <br> Public Z as Long <br> 
+            Public Const power2 As Integer = 2</td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Workbook/Worksheet Objects</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples"><a href="https://www.excel-easy.com/vba/workbook-worksheet-object.html">Excel Easy</a>
+                <br> <code>Application.Workbooks("create-a-macro").Worksheets(1).Range("A1").Value = "Hello"</code> <br>
+                Workbooks collection contains all the Workbook objects that are currently open. The Worksheets collection contains all the Worksheet objects in a workbook <br>    
+            </td>
+       </tr>
+
+
+      <tr>
+            <td  headers="t416641_row_0col_0" data-header="Topic">Range Objects</td>
+            <td  headers="t416641_row_0col_1" data-header="Template/Examples">
+                
+            <code>Range("A1:A2,B3:C4").Value = 10</code> <br>
+            <code>Range("Prices").Value = 15</code> <br>
+            <code>Range(Cells(1, 1), Cells(4, 1)).Value = 5</code> <br><br>
+            <code>Dim example As Range <br>
+            Set example = Range("A1:C4") example.Select</code> <br><br>
+            <code>Dim example As Range <br>    
+            Set example = Range("A1:C4") example.Rows(3).Select</code><br>
+
+            </td>
+       </tr>
+
+        <tr>
+            <td headers="t416641_row_0col_0" data-header="Topic">Conditionals</td>
+            <td headers="t416641_row_0col_1" data-header="Template/Examples">
+                <pre class="code">
+                If LRegion ="N" Then
+                   LRegionName = "North"
+
+                ElseIf LRegion = "S" Then
+                   LRegionName = "South"
+
+                ElseIf LRegion = "E" Then
+                   LRegionName = "East"
+
+                Else
+                   LRegionName = "West"
+
+                End If
+                </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td headers="t416641_row_0col_0" data-header="Topic">Loops</td>
+            <td headers="t416641_row_0col_1" data-header="Template/Examples">
+                <pre class="code">
+
+                    Dim i As Integer
+                    For i = 1 To 6
+                        Cells(i, 1).Value = 100
+                    Next i
+
+                    Dim i As Integer, j As Integer
+                    For i = 1 To 6
+                        For j = 1 To 2
+                            Cells(i, j).Value = 100
+                        Next j
+                    Next i
+ 
+                    Dim c As Integer, i As Integer, j As Integer
+                    For c = 1 To 3
+                        For i = 1 To 6
+                            For j = 1 To 2
+                                Worksheets(c).Cells(i, j).Value = 100
+                            Next j
+                        Next i
+                    Next c
+
+
+                    Dim i As Integer
+                    i = 1
+                    Do While i < 6
+                        Cells(i, 1).Value = 20
+                        i = i + 1
+                    Loop
+
+
+                </pre>
+            </td>
+        </tr>
+
+</tbody>
+</table>
+
+
+
+    <hr>
+
+    <h2>Misc</h2>
+    <ul>
+        <li>Inserting buttons with 'alt' will allow them to stay in cell contours</li>
+    </ul>
+    
+    
+      <div class="moz-reader-content line-height4 reader-show-element"><div id="readability-page-1" class="page"><div>
+              <h2>From 'excel-easy.com'</h2>
+              
+              <p><a href="https://www.excel-easy.com/vba/create-a-macro.html">Create a Macro</a>: With Excel VBA you can automate tasks in Excel by writing so called macros. In this chapter, learn how to create a simple <strong>macro</strong>.</p>
+              <p><a href="https://www.excel-easy.com/vba/msgbox.html">MsgBox</a>: The MsgBox is a dialog box in Excel VBA you can use to inform the users of your program.</p>
+              <p><a href="https://www.excel-easy.com/vba/workbook-worksheet-object.html">Workbook and Worksheet Object</a>: Learn more about the Workbook and Worksheet object in Excel VBA.</p>
+              <p><a href="https://www.excel-easy.com/vba/range-object.html">Range Object</a>: The Range object, which is the representation of a cell (or cells) on your worksheet, is the most important object of Excel VBA.</p>
+
+              <p style="text-align: center"><a href="https://1drv.ms/x/s!Aga_4YO2d91u7ktIuOUt7I_fjWUy">Worksheet and Range object practice</a></p>
+              <p><a href="https://www.excel-easy.com/vba/variables.html">Variables</a>: This chapter teaches you how to declare, initialize and display a&nbsp;variable&nbsp;in Excel VBA.</p>
+              <p><a href="https://www.excel-easy.com/vba/if-then-statement.html">If Then Statement</a>: Use the If Then statement in Excel VBA to execute code lines if a specific condition is met.</p>
+              <p><a href="https://www.excel-easy.com/vba/loop.html">Loop</a>: Looping is one of the most powerful programming techniques. A loop in Excel VBA enables you to loop through a range of cells with just a few codes lines.</p>
+              <p><a href="https://www.excel-easy.com/vba/macro-errors.html">Macro Errors</a>: This chapter teaches you how to deal with macro errors in Excel.</p>
+              <p><a href="https://www.excel-easy.com/vba/string-manipulation.html">String Manipulation</a>: In this chapter, you'll find the most important functions to manipulate strings in Excel VBA.</p>
+              <p> <a href="https://www.excel-easy.com/vba/date-time.html">Date and Time</a>: Learn how to work with dates and times in Excel VBA.</p>
+              <p> <a href="https://www.excel-easy.com/vba/events.html">Events</a>: Events are actions performed by users which trigger Excel VBA to execute code.</p>
+              <p> <a href="https://www.excel-easy.com/vba/array.html">Array</a>: An array is a group of variables. In Excel VBA, you can refer to a specific varble (element) of an&nbsp;array&nbsp;by using the array name and the index number.</p>
+              <p><a href="https://www.excel-easy.com/vba/function-sub.html">Function and Sub</a>: In Excel VBA, a function can return a value while a sub cannot.</p>
+              <p> <a href="https://www.excel-easy.com/vba/application-object.html">Application Object</a>: The mother of all objects is Excel itself. We call it the Application object. The application object gives access to a lot of Excel related options.</p>
+              <p> <a href="https://www.excel-easy.com/vba/activex-controls.html">ActiveX Controls</a>: Learn how to create ActiveX controls such as command buttons, text boxes, list boxes etc.</p>
+              <p> <a href="https://www.excel-easy.com/vba/userform.html">Userform</a>: This chapter teaches you how to create an Excel VBA Userform.</p>
+              <p>Want to learn much more about VBA programming in Excel? <span>You can find related examples and features on the right side of each chapter.</span> Check out all <a href="https://www.excel-easy.com/examples.html#vba">100 related examples and features</a>.</p>
+              </div></div></div>
+
+<hr>
+<h2 id='strings'>Strings</h2>
+<h3><a href="https://excelmacromastery.com/vba-string-functions/">[REF]</a></h3>
+<div id="readerDiv" class=""><div id="resBorder" class=""></div>
+                <div id="toc_container" class="no_bullets"><p class="toc_title">Contents <span class="toc_toggle"></span></p><ul class="toc_list"><li><a href="#Quick_Guide_to_String_Functions"><span class="toc_number toc_depth_1">1</span> Quick Guide to String Functions</a></li><li><a href="#The_Webinar"><span class="toc_number toc_depth_1">2</span> The Webinar</a></li><li><a href="#Introduction"><span class="toc_number toc_depth_1">3</span> Introduction</a></li><li><a href="#Read_This_First"><span class="toc_number toc_depth_1">4</span> Read This First!</a><ul><li><a href="#The_Original_String_is_not_Changed"><span class="toc_number toc_depth_2">4.1</span> The Original String is not Changed</a></li><li><a href="#How_To_Use_Compare"><span class="toc_number toc_depth_2">4.2</span> How To Use Compare</a></li></ul></li><li><a href="#Appending_Strings"><span class="toc_number toc_depth_1">5</span> Appending Strings</a></li><li><a href="#Extracting_Part_of_a_String"><span class="toc_number toc_depth_1">6</span> Extracting Part of a String</a></li><li><a href="#Searching_Within_a_String"><span class="toc_number toc_depth_1">7</span> Searching Within a String</a><ul><li><a href="#InStr_Description_ofParameters"><span class="toc_number toc_depth_2">7.1</span> InStr Description of&nbsp;Parameters</a></li><li><a href="#InStr_Use_and_Examples"><span class="toc_number toc_depth_2">7.2</span> InStr Use and Examples</a></li><li><a href="#InStrRev_Description_ofParameters"><span class="toc_number toc_depth_2">7.3</span> InStrRev Description of&nbsp;Parameters</a></li><li><a href="#InStrRev_Use_and_Examples"><span class="toc_number toc_depth_2">7.4</span> InStrRev Use and Examples</a></li></ul></li><li><a href="#Removing_Blanks"><span class="toc_number toc_depth_1">8</span> Removing Blanks</a><ul><li><a href="#Trim_Functions_Use_and_Examples"><span class="toc_number toc_depth_2">8.1</span> Trim Functions Use and Examples</a></li></ul></li><li><a href="#Length_of_a_String"><span class="toc_number toc_depth_1">9</span> Length of a String</a></li><li><a href="#Reversing_a_String"><span class="toc_number toc_depth_1">10</span> Reversing a String</a></li><li><a href="#Comparing_Strings"><span class="toc_number toc_depth_1">11</span> Comparing Strings</a><ul><li><a href="#Description_ofParameters"><span class="toc_number toc_depth_2">11.1</span> Description of&nbsp;Parameters</a></li><li><a href="#StrComp_Return_Values"><span class="toc_number toc_depth_2">11.2</span> StrComp Return Values</a></li><li><a href="#Use_and_Examples"><span class="toc_number toc_depth_2">11.3</span> Use and Examples</a></li><li><a href="#Compare_Strings_usingOperators"><span class="toc_number toc_depth_2">11.4</span> Compare Strings using&nbsp;Operators</a></li></ul></li><li><a href="#Comparing_Strings_using_Pattern_Matching"><span class="toc_number toc_depth_1">12</span> Comparing Strings using Pattern Matching</a><ul><li><a href="#Real-World_Example_of_Pattern_Matching"><span class="toc_number toc_depth_2">12.1</span> Real-World Example of Pattern Matching</a></li><li><a href="#Important_Note_on_VBA_Pattern_Matching"><span class="toc_number toc_depth_2">12.2</span> Important Note on VBA Pattern Matching</a></li></ul></li><li><a href="#Replace_Part_of_a_String"><span class="toc_number toc_depth_1">13</span> Replace Part of a String</a><ul><li><a href="#Replace_Description_ofParameters"><span class="toc_number toc_depth_2">13.1</span> Replace Description of&nbsp;Parameters</a></li><li><a href="#Use_and_Examples-2"><span class="toc_number toc_depth_2">13.2</span> Use and Examples</a></li><li><a href="#Multiple_Replaces"><span class="toc_number toc_depth_2">13.3</span> Multiple Replaces</a></li></ul></li><li><a href="#Convert_Types_to_StringBasic"><span class="toc_number toc_depth_1">14</span> Convert Types to String(Basic)</a><ul><li><a href="#Explicit_Conversion"><span class="toc_number toc_depth_2">14.1</span> Explicit Conversion</a></li><li><a href="#Multi_Region"><span class="toc_number toc_depth_2">14.2</span> Multi Region</a></li></ul></li><li><a href="#Convert_String_to_Number-CLng_CDbl_Val_etc"><span class="toc_number toc_depth_1">15</span> Convert String to Number-&nbsp;CLng, CDbl, Val etc.</a><ul><li><a href="#The_Val_Function"><span class="toc_number toc_depth_2">15.1</span> The Val Function</a></li></ul></li><li><a href="#Generate_a_String_of_items_8211_String_Function"><span class="toc_number toc_depth_1">16</span> Generate a String of items – String Function</a></li><li><a href="#Convert_CaseUnicode_8211_StrConv_UCase_LCase"><span class="toc_number toc_depth_1">17</span> Convert Case/Unicode – StrConv, UCase, LCase</a><ul><li><a href="#Other_Conversions"><span class="toc_number toc_depth_2">17.1</span> Other Conversions</a></li></ul></li><li><a href="#Using_Strings_With_Arrays"><span class="toc_number toc_depth_1">18</span> Using Strings With Arrays</a><ul><li><a href="#String_to_Array_using_Split"><span class="toc_number toc_depth_2">18.1</span> String to Array using Split</a></li><li><a href="#Array_to_String_using_Join"><span class="toc_number toc_depth_2">18.2</span> Array to String using Join</a></li></ul></li><li><a href="#Formatting_a_String"><span class="toc_number toc_depth_1">19</span> Formatting a String</a><ul><li><a href="#Helpful_Tip_for_Using_Format"><span class="toc_number toc_depth_2">19.1</span> Helpful Tip for Using Format</a></li></ul></li><li><a href="#Conclusion"><span class="toc_number toc_depth_1">20</span> Conclusion</a></li><li><a href="#What8217s_Next"><span class="toc_number toc_depth_1">21</span> What’s Next?</a></li></ul></div>
+<h1 id="easyreader-0"><span id="Quick_Guide_to_String_Functions">Quick Guide to String Functions</span></h1>
+
+<table id="tablepress-17" class="tablepress tablepress-id-17">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">String operations</th><th class="column-2">Function(s)</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1"><a href="#Appending_Strings">Append two or more strings</a></td><td class="column-2">Format or "&amp;"</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1"><a href="#Array_to_String_using_Join">Build a string from an array</a></td><td class="column-2">Join</td>
+</tr>
+<tr class="row-4 even">
+    <td class="column-1"><a href="#Comparing_Strings">Compare - normal</a></td><td class="column-2">StrComp or "="</td>
+</tr>
+<tr class="row-5 odd">
+    <td class="column-1"><a href="#Comparing_Strings_using_Pattern_Matching">Compare - pattern</a></td><td class="column-2">Like</td>
+</tr>
+<tr class="row-6 even">
+    <td class="column-1"><a href="#Convert_Types_to_StringBasic">Convert to a string</a></td><td class="column-2">CStr, Str</td>
+</tr>
+<tr class="row-7 odd">
+    <td class="column-1"><a href="#Convert_String_to_Number-CLng_CDbl_Val_etc">Convert string to date</a></td><td class="column-2">Simple: CDate <br>
+Advanced: Format</td>
+</tr>
+<tr class="row-8 even">
+    <td class="column-1"><a href="#Convert_String_to_Number-CLng_CDbl_Val_etc">Convert string to number</a></td><td class="column-2">Simple: CLng, CInt, CDbl, Val<br>
+Advanced: Format</td>
+</tr>
+<tr class="row-9 odd">
+    <td class="column-1"><a href="#Convert_CaseUnicode_8211_StrConv_UCase_LCase">Convert to unicode, wide, narrow</a></td><td class="column-2">StrConv</td>
+</tr>
+<tr class="row-10 even">
+    <td class="column-1"><a href="#Convert_CaseUnicode_8211_StrConv_UCase_LCase">Convert to upper/lower case</a></td><td class="column-2">StrConv, UCase, LCase</td>
+</tr>
+<tr class="row-11 odd">
+    <td class="column-1"><a href="#Extracting_Part_of_a_String">Extract part of a string</a></td><td class="column-2">Left, Right, Mid</td>
+</tr>
+<tr class="row-12 even">
+    <td class="column-1"><a href="#Formatting_a_String">Format a string</a></td><td class="column-2">Format</td>
+</tr>
+<tr class="row-13 odd">
+    <td class="column-1"><a href="#Searching_Within_a_String">Find characters in a string</a></td><td class="column-2">InStr, InStrRev</td>
+</tr>
+<tr class="row-14 even">
+    <td class="column-1"><a href="#Generate_a_String_of_items_8211_String_Function">Generate a string</a></td><td class="column-2">String</td>
+</tr>
+<tr class="row-15 odd">
+    <td class="column-1"><a href="#Length_of_a_String">Get length of a string</a></td><td class="column-2">Len</td>
+</tr>
+<tr class="row-16 even">
+    <td class="column-1"><a href="#Removing_Blanks">Remove blanks</a></td><td class="column-2">LTrim, RTrim, Trim</td>
+</tr>
+<tr class="row-17 odd">
+    <td class="column-1"><a href="#Replace_Part_of_a_String">Replace part of a string</a></td><td class="column-2">Replace</td>
+</tr>
+<tr class="row-18 even">
+    <td class="column-1"><a href="#Reversing_a_String">Reverse a string</a></td><td class="column-2">StrReverse</td>
+</tr>
+<tr class="row-19 odd">
+    <td class="column-1"><a href="#String_to_Array_using_Split">Parse string to array </a></td><td class="column-2">Split</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-17 from cache -->
+<p>&nbsp;<br>
+&nbsp;</p>
+
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-2"><span id="Introduction">Introduction</span></h1>
+<p>Using strings is a very important part of VBA. There are many types of manipulation you may wish to do with strings. These include tasks such as</p>
+<ul>
+<li>extracting part of a string</li>
+<li>comparing strings</li>
+<li>converting numbers to a string</li>
+<li>formatting a date to include weekday</li>
+<li>finding a character in a string</li>
+<li>removing blanks</li>
+<li>parsing to an array</li>
+<li>and so on</li>
+</ul>
+<p>&nbsp;<br>
+&nbsp;<br>
+The good news is that VBA contains plenty of functions to&nbsp;help you perform these tasks with ease.</p>
+<p>This post provides an in-depth guide to using string in VBA. It explains strings in simple terms with clear code examples. I have laid it out so the post can be easily used as a quick reference guide.</p>
+<p>If you are going to use strings a lot then I recommend you read the first section as it applies to a lot of the functions. Otherwise you can read in order or just go to the section you require.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-3"><span id="Read_This_First">Read This First!</span></h1>
+<p>The following two points are very important when dealing with VBA string functions.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-4"><span id="The_Original_String_is_not_Changed">The Original String is not Changed</span></h2>
+<p>An important point to remember is that the VBA string functions do not change the original string. They return a new string with the changes the function made. If you want to change the original string you simply assign the result to the original string. See the section <a href="vba-instr">Extracting Part of a String</a>&nbsp;for&nbsp;examples of this.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-5"><span id="How_To_Use_Compare">How To Use Compare</span></h2>
+<p>Some of the string functions such as<span style="color: #000000;"> StrComp() and Instr() </span>etc. have an optional <span style="color: #000000;"><strong>Compare </strong></span>parameter. This works as follows:</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>vbTextCompare</strong>: Upper and lower case are considered the same</p>
+<p><strong>vbBinaryCompare</strong>: Upper and lower case are considered different</p>
+<p>The following code uses the string comparison function StrComp() to demonstrate the Compare parameter</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> Comp1()
+
+    <span style="color:#008200;">' Prints 0  : Strings match</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"ABC"</span>, <span style="color:#0000ff;">"abc"</span>, vbTextCompare)
+    <span style="color:#008200;">' Prints -1 : Strings do not match</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"ABC"</span>, <span style="color:#0000ff;">"abc"</span>, vbBinaryCompare)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+You can use the <strong><span style="color: #000000;">Option Compare</span></strong> setting instead of having to use this parameter each time. <span style="color: #000000;">Option Compare </span>is set at the top of a Module. Any function that uses the <span style="color: #3366ff;"><span style="color: #000000;">Compare</span></span> parameter will take this setting as the default. The two ways to use Option Compare are:</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>1. Option Compare Text</strong>: makes vbTextCompare the default Compare argument</p>
+<pre style="color:#000000;background:rgb(189,215,238);">Option Compare Text
+
+<span style="color:#006699; font-weight:bold;">Sub</span> Comp2()
+    <span style="color:#008200;">' Strings match - uses vbCompareText as Compare argument</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"ABC"</span>, <span style="color:#0000ff;">"abc"</span>)
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"DEF"</span>, <span style="color:#0000ff;">"def"</span>)
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>2. Option Compare&nbsp;Binary</strong>: Makes vbBinaryCompare the default Compare argument</p>
+<pre style="color:#000000;background:rgb(189,215,238);">Option Compare Binary
+
+<span style="color:#006699; font-weight:bold;">Sub</span> Comp2()
+    <span style="color:#008200;">' Strings do not match - uses vbCompareBinary as Compare argument</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"ABC"</span>, <span style="color:#0000ff;">"abc"</span>)
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"DEF"</span>, <span style="color:#0000ff;">"def"</span>)
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+If Option Compare is not used then the default is <strong>Option Compare Binary</strong>.</p>
+<p>Now that you understand these two important points about string we can go ahead and look at the string functions individually.</p>
+<p><a href="#">Go back to menu</a></p>
+
+You can append strings using the <span style="color: #ff0000;"><strong>&amp; </strong><span style="color: #333300;">operator</span><span style="color: #333300;">. The following code shows some examples of&nbsp;using it</span></span></p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> Append()
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABC"</span> &amp; <span style="color:#0000ff;">"DEF"</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Jane"</span> &amp; <span style="color:#0000ff;">" "</span> &amp; <span style="color:#0000ff;">"Smith"</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Long "</span> &amp; 22
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Double "</span> &amp; 14.99
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Date "</span> &amp; #12/12/2015#
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+You can see in the example that different types such as dates and number are automatically converted to strings. You may see the <span style="color: #ff0000;"><strong>+ </strong></span>operator being used to append strings. The difference is that this operator will only work with string types. If you try to use it with other type you will get an error.</p>
+<pre style="color:#000000;background:rgb(189,215,238);">    <span style="color:#008200;">' This will give the error message:  "Type Mismatch"</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Long "</span> + 22
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+If you want to do more complex appending of strings then you may wish to use the <a href="#Formatting_a_String">Format function</a>&nbsp;described below.</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-7"><span id="Extracting_Part_of_a_String">Extracting Part of a String</span></h1>
+<p>The functions discussed in this section are useful when dealing with basic extracting from a string. For anything more complicated you might want to check out my post on <a href="vba-instr" target="_blank">How to Easily Extract From Any String Without Using VBA InStr</a>.</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+
+</p><div id="tablepress-1_wrapper" class="dataTables_wrapper no-footer"><table id="tablepress-1" class="tablepress tablepress-id-1 dataTable no-footer" role="grid">
+<thead>
+<tr class="row-1 odd" role="row"><th class="column-1 sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Function</th><th class="column-2 sorting_disabled" rowspan="1" colspan="1" style="width: 159px;">Params</th><th class="column-3 sorting_disabled" rowspan="1" colspan="1" style="width: 236px;">Description</th><th class="column-4 sorting_disabled" rowspan="1" colspan="1" style="width: 184px;">Example</th></tr>
+</thead>
+<tbody class="row-hover">
+
+
+
+<tr class="row-2 even" role="row">
+    <td class="column-1">Left</td><td class="column-2">string, length</td><td class="column-3">Return chars from left side</td><td class="column-4">Left("John Smith",4)</td>
+</tr><tr class="row-3 odd" role="row">
+    <td class="column-1">Right</td><td class="column-2">string, length</td><td class="column-3">Return chars from right side</td><td class="column-4">Right("John Smith",5)</td>
+</tr><tr class="row-4 even" role="row">
+    <td class="column-1">Mid</td><td class="column-2">string, start, length</td><td class="column-3">Return chars from middle</td><td class="column-4">Mid("John Smith",3,2)</td>
+</tr></tbody>
+</table></div>
+<!-- #tablepress-1 from cache --><p></p>
+<p>&nbsp;<br>
+&nbsp;<br>
+The <strong>Left</strong>, <strong>Right</strong>, and <strong>Mid</strong>&nbsp;functions are&nbsp;used to extract parts of a string. They are very simple functions to use. <strong>Left</strong> reads characters from the left, <strong>Right</strong> from the right and <strong>Mid</strong> from a starting point that you specify.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> UseLeftRightMid()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> sCustomer <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    sCustomer = <span style="color:#0000ff;">"John Thomas Smith"</span>
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Left(sCustomer, 4)  <span style="color:#008200;">'  Prints: John</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Right(sCustomer, 5) <span style="color:#008200;">'  Prints: Smith</span>
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Left(sCustomer, 11)  <span style="color:#008200;">'  Prints: John Thomas</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Right(sCustomer, 12)  <span style="color:#008200;">'  Prints: Thomas Smith</span>
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Mid(sCustomer, 1, 4) <span style="color:#008200;">' Prints: John</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Mid(sCustomer, 6, 6) <span style="color:#008200;">' Prints: Thomas</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Mid(sCustomer, 13, 5) <span style="color:#008200;">' Prints: Smith</span>
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+As mentioned in the previous section, VBA string functions do not change the original string.&nbsp;Instead, they return the result as a new string.</p>
+<p>In the next example you can see that the string <strong>Fullname</strong> was not changed after using the Left function</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> UsingLeftExample()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> Fullname <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    Fullname = <span style="color:#0000ff;">"John Smith"</span>
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Firstname is: "</span>; Left(Fullname, 4)
+    <span style="color:#008200;">' Original string has not changed</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Fullname is: "</span>; Fullname
+
+ <span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+If you want to change the original string you simply assign it to the return value of the function</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ChangingString()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> name <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    name = <span style="color:#0000ff;">"John Smith"</span>
+
+    <span style="color:#008200;">' Assign return string to the name variable</span>
+    name = Left(name, 4)
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Name is: "</span>; name
+
+ <span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-8"><span id="Searching_Within_a_String">Searching Within a String</span></h1>
+
+<table id="tablepress-2" class="tablepress tablepress-id-2">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">InStr</td><td class="column-2">String1,  String2</td><td class="column-3">Finds position of string</td><td class="column-4">InStr("John Smith","h")</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">InStrRev</td><td class="column-2">StringCheck, StringMatch</td><td class="column-3">Finds position of string from end</td><td class="column-4">InStrRev("John Smith","h")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-2 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+InStr and InStrRev are VBA functions used to search through strings for a substring. If the search string is found then the position(from the start of the check string) of the search string is returned. If the&nbsp;search string is not found then zero is returned. If either string is null then null is returned.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-9"><span id="InStr_Description_ofParameters">InStr Description of&nbsp;Parameters</span></h2>
+<p><strong>InStr()</strong> Start[Optional], String1, String2, Compare[Optional]</p>
+<ul>
+<li><strong>Start</strong> As Long[Optional – Default is 1]: This is a number that specifies the starting search position from the left</li>
+<li><strong>String1</strong> As String: The string to search</li>
+<li><strong>String2</strong> As String: The string to search for</li>
+<li><strong>Compare</strong> As vbCompareMethod : See the section on <a href="#How_To_Use_Compare">Compare </a>above for more details</li>
+</ul>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-10"><span id="InStr_Use_and_Examples">InStr Use and Examples</span></h2>
+<p>InStr returns the first position in a string where a given substring is found. The following shows some examples of using it</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> FindSubString()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> name <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    name = <span style="color:#0000ff;">"John Smith"</span>
+
+    <span style="color:#008200;">' Returns 3 - position of first h</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStr(name, <span style="color:#0000ff;">"h"</span>)
+    <span style="color:#008200;">' Returns 10 - position of first h starting from position 4</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStr(4, name, <span style="color:#0000ff;">"h"</span>)
+    <span style="color:#008200;">' Returns 8</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStr(name, <span style="color:#0000ff;">"it"</span>)
+    <span style="color:#008200;">' Returns 6</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStr(name, <span style="color:#0000ff;">"Smith"</span>)
+    <span style="color:#008200;">' Returns 0 - string "SSS" not found</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStr(name, <span style="color:#0000ff;">"SSS"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-11"><span id="InStrRev_Description_ofParameters">InStrRev Description of&nbsp;Parameters</span></h2>
+<p><strong>InStrRev()</strong> StringCheck, StringMatch, Start[Optional], Compare[Optional]</p>
+<ul>
+<li><strong>StringCheck</strong> As String: The string to search</li>
+<li><strong>StringMatch</strong>: The string to search for</li>
+<li><strong>Start</strong> As Long[Optional – Default is -1]: This is a number that specifies the starting search position from the right</li>
+<li><strong>Compare</strong> As vbCompareMethod: See the section on <a href="#How_To_Use_Compare">Compare </a>above for more details</li>
+</ul>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-12"><span id="InStrRev_Use_and_Examples">InStrRev Use and Examples</span></h2>
+<p>The InStrRev function is the same as InStr except that it searches from the end of the string. It’s important to note that the position returned is the position from the start. Therefore if there is only one instance of the search item then both InStr() and InStrRev() will return the same value.</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+The following code show some examples of using InStrRev</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> UsingInstrRev()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> name <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    name = <span style="color:#0000ff;">"John Smith"</span>
+
+    <span style="color:#008200;">' Both Return 1 - position of the only J</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStr(name, <span style="color:#0000ff;">"J"</span>)
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStrRev(name, <span style="color:#0000ff;">"J"</span>)
+
+    <span style="color:#008200;">' Returns 10 - second h</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStrRev(name, <span style="color:#0000ff;">"h"</span>)
+    <span style="color:#008200;">' Returns 3 - first h as searches from position 9</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStrRev(name, <span style="color:#0000ff;">"h"</span>, 9)
+
+    <span style="color:#008200;">' Returns 1</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> InStrRev(name, <span style="color:#0000ff;">"John"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+The InStr and InStrRev functions are useful when dealing with basic string searches. However, if you are going to use them for extracting text from a string they can make things complicated. I have written about a much better way to do this in my post <a href="https://excelmacromastery.com/vba-instr/" target="_blank">How to Easily Extract From Any String Without Using VBA InStr</a>.</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-13"><span id="Removing_Blanks">Removing Blanks</span></h1>
+
+<table id="tablepress-3" class="tablepress tablepress-id-3">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">LTrim</td><td class="column-2">string</td><td class="column-3">Removes spaces from left</td><td class="column-4">LTrim(" John ")</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">RTrim</td><td class="column-2">string</td><td class="column-3">Removes spaces from right</td><td class="column-4">RTrim(" John ")</td>
+</tr>
+<tr class="row-4 even">
+    <td class="column-1">Trim</td><td class="column-2">string</td><td class="column-3">Removes Spaces from left and right</td><td class="column-4">Trim(" John ")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-3 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+The Trim functions are simple functions that remove spaces from either the start or end of a string.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-14"><span id="Trim_Functions_Use_and_Examples">Trim Functions Use and Examples</span></h2>
+<ul>
+<li><strong>LTrim</strong> removes spaces from the left of a string</li>
+<li><strong>RTrim</strong> removes spaces from the right of a string</li>
+<li><strong>Trim</strong> removes spaces from the left and right of a string</li>
+</ul>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> TrimStr()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> name <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    name = <span style="color:#0000ff;">"  John Smith  "</span>
+
+    <span style="color:#008200;">' Prints "John Smith  "</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> LTrim(name)
+    <span style="color:#008200;">' Prints "  John Smith"</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> RTrim(name)
+    <span style="color:#008200;">' Prints "John Smith"</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Trim(name)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-15"><span id="Length_of_a_String">Length of a String</span></h1>
+
+<table id="tablepress-4" class="tablepress tablepress-id-4">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">Len</td><td class="column-2">string</td><td class="column-3">Returns length of string</td><td class="column-4">Len ("John Smith")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-4 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+Len is a simple function when used with a string. It simply returns the number of characters the string contains. If used with a numeric type such as long it will return the number of bytes.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> GetLen()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> name <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    name = <span style="color:#0000ff;">"John Smith"</span>
+
+    <span style="color:#008200;">' Prints 10</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Len(<span style="color:#0000ff;">"John Smith"</span>)
+    <span style="color:#008200;">' Prints 3</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Len(<span style="color:#0000ff;">"ABC"</span>)
+
+    <span style="color:#008200;">' Prints 4 as Long is 4 bytes in size</span>
+    <span style="color:#006699; font-weight:bold;">Dim</span> total <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">Long</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Len(total)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-16"><span id="Reversing_a_String">Reversing a String</span></h1>
+
+<table id="tablepress-8" class="tablepress tablepress-id-8">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">StrReverse</td><td class="column-2">string</td><td class="column-3">Reverses a string</td><td class="column-4">StrReverse ("John Smith")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-8 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+StrReverse is another easy-to-use function. It simply returns the given string with the characters reversed.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> RevStr()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> s <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    s = <span style="color:#0000ff;">"Jane Smith"</span>
+    <span style="color:#008200;">' Prints: htimS enaJ</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrReverse(s)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-17"><span id="Comparing_Strings">Comparing Strings</span></h1>
+
+<table id="tablepress-9" class="tablepress tablepress-id-9">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">StrComp</td><td class="column-2">string1, string2</td><td class="column-3">Compares 2 strings</td><td class="column-4">StrComp ("John", "John")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-9 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+The function StrComp is used to compare two strings. The following subsections describe how it is used.</p>
+<p>&nbsp;</p>
+<h2 id="easyreader-18"><span id="Description_ofParameters">Description of&nbsp;Parameters</span></h2>
+<p><strong>StrComp()</strong> &nbsp;String1, String2, Compare[Optional]</p>
+<ul>
+<li><strong>String1</strong> As String: The first string to&nbsp;compare</li>
+<li><strong>String2</strong> As String: The second string to&nbsp;compare</li>
+<li><strong>Compare</strong> As vbCompareMethod : See the section on <a href="#How_To_Use_Compare">Compare </a>above for more details</li>
+</ul>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-19"><span id="StrComp_Return_Values"><strong>StrComp Return Values</strong></span></h2>
+
+<table id="tablepress-15" class="tablepress tablepress-id-15">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Return Value</th><th class="column-2">Description</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">0</td><td class="column-2">Strings match</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">-1</td><td class="column-2">string1 less than string2</td>
+</tr>
+<tr class="row-4 even">
+    <td class="column-1">1</td><td class="column-2">string1 greater than string2</td>
+</tr>
+<tr class="row-5 odd">
+    <td class="column-1">Null</td><td class="column-2">if either string is null</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-15 from cache -->
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-20"><span id="Use_and_Examples">Use and Examples</span></h2>
+<p>The following are some examples of using the StrComp function</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> UsingStrComp()
+
+   <span style="color:#008200;">' Returns 0</span>
+   <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;"><span style="color:#0000ff;">"ABC"</span></span>, <span style="color:#0000ff;"><span style="color:#0000ff;">"ABC"</span></span>, vbTextCompare)
+   <span style="color:#008200;">' Returns 1</span>
+   <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"ABCD"</span>, <span style="color:#0000ff;">"ABC"</span>, vbTextCompare)
+   <span style="color:#008200;">' Returns -1</span>
+   <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(<span style="color:#0000ff;">"ABC"</span>, <span style="color:#0000ff;">"ABCD"</span>, vbTextCompare)
+   <span style="color:#008200;">' Returns Null</span>
+   <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrComp(Null, <span style="color:#0000ff;">"ABCD"</span>, vbTextCompare)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-21"><span id="Compare_Strings_usingOperators">Compare Strings using&nbsp;Operators</span></h2>
+<p>You can also use the equals sign to compare strings. The difference between the equals comparison and the StrComp function are:</p>
+<ol>
+<li>The equals sign returns only true or false.</li>
+<li>You cannot specify a <a href="https://excelmacromastery.com/?p=958#Important_2_8211Using_Compare">Compare</a>&nbsp;parameter using the equal sign – it uses the “Option Compare” setting.</li>
+</ol>
+<p>&nbsp;<br>
+&nbsp;<br>
+The following shows some examples of using equals to compare strings</p>
+<pre style="color:#000000;background:rgb(189,215,238);">Option Compare Text
+
+<span style="color:#006699; font-weight:bold;">Sub</span> CompareUsingEquals()
+
+    <span style="color:#008200;">' Returns true</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;"><span style="color:#0000ff;">"ABC"</span></span> = <span style="color:#0000ff;"><span style="color:#0000ff;">"ABC"</span></span>
+    <span style="color:#008200;">' Returns true because "Compare Text" is set above</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABC"</span> = <span style="color:#0000ff;">"abc"</span>
+    <span style="color:#008200;">' Returns false</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABCD"</span> = <span style="color:#0000ff;">"ABC"</span>
+    <span style="color:#008200;">' Returns false</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABC"</span> = <span style="color:#0000ff;">"ABCD"</span>
+    <span style="color:#008200;">' Returns null</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Null = <span style="color:#0000ff;">"ABCD"</span>
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+The Operator “&lt;&gt;” means “does not equal”. It is essentially the opposite of using the equals sign as the following code shows</p>
+<pre style="color:#000000;background:rgb(189,215,238);">Option Compare Text
+
+<span style="color:#006699; font-weight:bold;">Sub</span> CompareWithNotEqual()
+
+    <span style="color:#008200;">' Returns false</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;"><span style="color:#0000ff;">"ABC"</span></span> &lt;&gt; <span style="color:#0000ff;"><span style="color:#0000ff;">"ABC"</span></span>
+    <span style="color:#008200;">' Returns false because "Compare Text" is set above</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABC"</span> &lt;&gt; <span style="color:#0000ff;">"abc"</span>
+    <span style="color:#008200;">' Returns true</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABCD"</span> &lt;&gt; <span style="color:#0000ff;">"ABC"</span>
+    <span style="color:#008200;">' Returns true</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"ABC"</span> &lt;&gt; <span style="color:#0000ff;">"ABCD"</span>
+    <span style="color:#008200;">' Returns null</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Null &lt;&gt; <span style="color:#0000ff;">"ABCD"</span>
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-22"><span id="Comparing_Strings_using_Pattern_Matching">Comparing Strings using Pattern Matching</span></h1>
+
+<table id="tablepress-18" class="tablepress tablepress-id-18">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Operator</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">Like</td><td class="column-2">string, string pattern</td><td class="column-3">checks if string has the given pattern</td><td class="column-4">"abX" Like "??X"<br>
+"54abc5" Like "*abc#"</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-18 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+
+</p><table id="tablepress-19" class="tablepress tablepress-id-19">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Token</th><th class="column-2">Meaning</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">?</td><td class="column-2">Any single char</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">#</td><td class="column-2">Any single digit(0-9)</td>
+</tr>
+<tr class="row-4 even">
+    <td class="column-1">*</td><td class="column-2">zero or more characters</td>
+</tr>
+<tr class="row-5 odd">
+    <td class="column-1">[charlist]</td><td class="column-2">Any char in the list</td>
+</tr>
+<tr class="row-6 even">
+    <td class="column-1">[!charlist]</td><td class="column-2">Any char not in the char list</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-19 from cache --><p></p>
+<p>&nbsp;<br>
+&nbsp;<br>
+Pattern matching is used to determine if a string has a particular pattern of characters. For example, you may want to check that a customer number has 3 digits followed by 3 alphabetic characters or a string has the letters XX followed by any number of characters.</p>
+<p>If the string matches the pattern then the return value is true, otherwise it is false.</p>
+<p>Pattern matching is similar to the VBA Format function in that there are almost infinite ways to use it. In this section I am going to give some examples that will explain how it works. This should cover the most common uses. If you need more information about pattern matching you can refer to the <a href="https://msdn.microsoft.com/en-us/library/office/gg251796(v=office.15).aspx" target="_blank">MSDN Page</a> for the Like operator.</p>
+<p>Lets have a look at a basic example using the tokens. Take the following pattern string</p>
+<p><span style="color: #000000;"><strong>[abc][!def]?#X*</strong></span></p>
+<p>&nbsp;<br>
+&nbsp;<br>
+Let’s&nbsp;look at&nbsp;how this&nbsp;string works<br>
+<strong>[abc]</strong> a character that is either a,b or c<br>
+<strong>[!def]</strong> a character that is not d,e or f<br>
+<strong>?</strong> any character<br>
+<strong>#</strong> any digit<br>
+<strong>X</strong> the character X<br>
+<strong>*</strong> followed by zero or more characters</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+Therefore the following string is valid<br>
+<span style="color: #000000;"><strong>apY6X</strong></span></p>
+<p>a is one of abc<br>
+p is not one of&nbsp;the characters d, e or f<br>
+Y is any character<br>
+6 is a digit<br>
+X is the letter X</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+The following code examples show the results of various strings with this pattern</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> Patterns()
+
+    <span style="color:#008200;">' True</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> 1; <span style="color:#0000ff;">"apY6X"</span> Like <span style="color:#0000ff;">"[abc][!def]?#X*"</span>
+    <span style="color:#008200;">' True - any combination of chars after x is valid</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> 2; <span style="color:#0000ff;">"apY6Xsf34FAD"</span> Like <span style="color:#0000ff;">"[abc][!def]?#X*"</span>
+    <span style="color:#008200;">' False - char d not in [abc]</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> 3; <span style="color:#0000ff;">"dpY6X"</span> Like <span style="color:#0000ff;">"[abc][!def]?#X*"</span>
+    <span style="color:#008200;">' False - 2nd char e is in [def]</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> 4; <span style="color:#0000ff;">"aeY6X"</span> Like <span style="color:#0000ff;">"[abc][!def]?#X*"</span>
+    <span style="color:#008200;">' False - A at position 4 is not a digit</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> 5; <span style="color:#0000ff;">"apYAX"</span> Like <span style="color:#0000ff;">"[abc][!def]?#X*"</span>
+    <span style="color:#008200;">' False - char at position 5 must be X</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> 1; <span style="color:#0000ff;">"apY6Z"</span> Like <span style="color:#0000ff;">"[abc][!def]?#X*"</span>
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-23"><span id="Real-World_Example_of_Pattern_Matching">Real-World Example of Pattern Matching</span></h2>
+<p>To see a real-world example of using pattern matching check out <a href="vba-instr/#Example_3_Checkif_a_filename_is_valid" target="_blank">Example 3: Check if a filename is valid</a>.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-24"><span id="Important_Note_on_VBA_Pattern_Matching">Important Note on VBA Pattern Matching</span></h2>
+<p>The Like operator uses either Binary or Text comparison based on the Option Compare setting. Please see the section on <a href="#How_To_Use_Compare">Compare </a>above for more details.</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-25"><span id="Replace_Part_of_a_String">Replace Part of a String</span></h1>
+
+<table id="tablepress-5" class="tablepress tablepress-id-5">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">Replace</td><td class="column-2">string, find, replace,<br> start, count, compare</td><td class="column-3">Replaces a substring with a substring</td><td class="column-4">Replace ("Jon","n","hn")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-5 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+Replace is used to replace a&nbsp;substring in a string by another substring. It replaces all instances of the substring that are found by default.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-26"><span id="Replace_Description_ofParameters">Replace Description of&nbsp;Parameters</span></h2>
+<p><strong>Replace()</strong> &nbsp;Expression, Find, Replace, Start[Optional], Count[Optional], Compare[Optional]</p>
+<ul>
+<li><strong>Expression</strong>&nbsp;As String: The string to&nbsp;replace chars in</li>
+<li><strong>Find</strong>&nbsp;As String: The substring to&nbsp;replace in the Expression string</li>
+<li><strong>Replace</strong> As String: The string to replace the Find substring with</li>
+<li><strong>Start</strong> As Long[Optional – Default is 1]: The start position in the string</li>
+<li><strong>Count</strong> As Long[Optional – Default is -1]: The number of substitutions to make. The default -1 means all.</li>
+<li><strong>Compare</strong> As vbCompareMethod : See the section on <a href="#How_To_Use_Compare">Compare </a>above for more details</li>
+</ul>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-27"><span id="Use_and_Examples-2">Use and Examples</span></h2>
+<p>The following code shows some examples of using the Replace function</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ReplaceExamples()
+
+    <span style="color:#008200;">' Replaces all the question marks with(?) with semi colons(;)</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"A?B?C?D?E"</span>, <span style="color:#0000ff;">"?"</span>, <span style="color:#0000ff;">";"</span>)
+    <span style="color:#008200;">' Replace Smith with Jones</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"Peter Smith,Ann Smith"</span>, <span style="color:#0000ff;">"Smith"</span>, <span style="color:#0000ff;">"Jones"</span>)
+    <span style="color:#008200;">' Replace AX with AB</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"ACD AXC BAX"</span>, <span style="color:#0000ff;">"AX"</span>, <span style="color:#0000ff;">"AB"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+A;B;C;D;E<br>
+Peter Jones,Sophia Jones<br>
+ACD ABC BAB</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+In the following examples we use the <strong>Count</strong> optional parameter. Count determines the number of substitutions to make. So for example, setting Count equal to one means that only the first occurrence will be replaced.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ReplaceCount()
+
+    <span style="color:#008200;">' Replaces first question mark only</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"A?B?C?D?E"</span>, <span style="color:#0000ff;">"?"</span>, <span style="color:#0000ff;">";"</span>, Count:=1)
+    <span style="color:#008200;">' Replaces first three question marks</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"A?B?C?D?E"</span>, <span style="color:#0000ff;">"?"</span>, <span style="color:#0000ff;">";"</span>, Count:=3)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+A;B?C?D?E<br>
+A;B;C;D?E</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+The <strong>Start</strong> optional parameter allow&nbsp;you to&nbsp;return&nbsp;part of a string.&nbsp;The position you specify using Start is where it starts returning the string from. It will not return any part of the string before this position whether a replace was made or not.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ReplacePartial()
+
+    <span style="color:#008200;">' Use original string from position 4</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"A?B?C?D?E"</span>, <span style="color:#0000ff;">"?"</span>, <span style="color:#0000ff;">";"</span>, Start:=4)
+    <span style="color:#008200;">' Use original string from position 8</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"AA?B?C?D?E"</span>, <span style="color:#0000ff;">"?"</span>, <span style="color:#0000ff;">";"</span>, Start:=8)
+    <span style="color:#008200;">' No item replaced but still only returns last 2 characters</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"ABCD"</span>, <span style="color:#0000ff;">"X"</span>, <span style="color:#0000ff;">"Y"</span>, Start:=3)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+;C;D;E<br>
+;E<br>
+CD</p>
+<p>Sometimes you may only want to replace only upper or lower case letters. You can use the <strong>Compare</strong> parameter to do this. This is used in a lot of string functions. &nbsp;For more information on this check out the <a href="#How_To_Use_Compare">Compare</a> section above.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ReplaceCase()
+
+    <span style="color:#008200;">' Replace capital A's only</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"AaAa"</span>, <span style="color:#0000ff;">"A"</span>, <span style="color:#0000ff;">"X"</span>, Compare:=vbBinaryCompare)
+    <span style="color:#008200;">' Replace All A's</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Replace(<span style="color:#0000ff;">"AaAa"</span>, <span style="color:#0000ff;">"A"</span>, <span style="color:#0000ff;">"X"</span>, Compare:=vbTextCompare)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+XaXa<br>
+XXXX</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-28"><span id="Multiple_Replaces">Multiple Replaces</span></h2>
+<p>If you want to replace multiple values in a string you can nest the calls. In the following code we want to replace X and Y with A and B respectively.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ReplaceMulti()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> newString <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+
+    <span style="color:#008200;">' Replace A with X</span>
+    newString = Replace(<span style="color:#0000ff;">"ABCD ABDN"</span>, <span style="color:#0000ff;">"A"</span>, <span style="color:#0000ff;">"X"</span>)
+    <span style="color:#008200;">' Now replace B with Y in new string</span>
+    newString = Replace(newString, <span style="color:#0000ff;">"B"</span>, <span style="color:#0000ff;">"Y"</span>)
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> newString
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+In the next example we will change the above code to perform the same task. We will use the return value of the first replace as the argument for the second replace.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ReplaceMultiNested()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> newString <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+
+    <span style="color:#008200;">' Replace A with X and B with Y</span>
+    newString = Replace(Replace(<span style="color:#0000ff;">"ABCD ABDN"</span>, <span style="color:#0000ff;">"A"</span>, <span style="color:#0000ff;">"X"</span>), <span style="color:#0000ff;">"B"</span>, <span style="color:#0000ff;">"Y"</span>)
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> newString
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+The result of both of these Subs is<br>
+XYCD XYDN</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-29"><span id="Convert_Types_to_StringBasic">Convert Types to String(Basic)</span></h1>
+<p>This section is about converting numbers to a string. A very important point here is that most the time VBA will automatically convert to a string for you. Let’s look at some examples</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> AutoConverts()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> s <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    <span style="color:#008200;">' Automatically converts number to string</span>
+    s = 12.99
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> s
+
+    <span style="color:#008200;">' Automatically converts multiple numbers to string</span>
+    s = <span style="color:#0000ff;">"ABC"</span> &amp; 6 &amp; 12.99
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> s
+
+    <span style="color:#008200;">' Automatically converts double variable to string</span>
+    <span style="color:#006699; font-weight:bold;">Dim</span> d <span style="color:#006699; font-weight:bold;">As</span> Double, l <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">Long</span>
+    d = 19.99
+    l = 55
+    s = <span style="color:#0000ff;">"Values are "</span> &amp; d &amp; <span style="color:#0000ff;">" "</span> &amp; l
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> s
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+When you run the above code you can see that the number were automatically converted to strings. So when you&nbsp;assign a value to a string VBA will look after the conversion for you most of the time. There are conversion functions in VBA and in the following sub sections we will look at the reasons for using them.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-30"><span id="Explicit_Conversion">Explicit Conversion</span></h2>
+
+<table id="tablepress-6" class="tablepress tablepress-id-6">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">CStr</td><td class="column-2">expression</td><td class="column-3">Converts a number variable to a string</td><td class="column-4">CStr ("45.78")</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">Str</td><td class="column-2">number</td><td class="column-3">Converts a number variable to a string</td><td class="column-4">Str ("45.78")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-6 from cache -->
+<p>In certain cases you may want to convert an item to a string without have to place it in a string variable first. In this case you can use the <strong>Str</strong> or <strong>CStr </strong>functions. Both take an &nbsp;expression as a function and this can be any type such as long, double, data or boolean.</p>
+<p>Let’s look at a simple example. Imagine you are reading a list of values from different types of cells to a collection. You can use the Str/CStr functions to ensure they are all stored as strings. The following code shows an example of this</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> UseStr()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> coll <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">New</span> Collection
+    <span style="color:#006699; font-weight:bold;">Dim</span> c <span style="color:#006699; font-weight:bold;">As</span> Range
+
+    <span style="color:#008200;">' Read cell values to collection</span>
+    <span style="color:#006699; font-weight:bold;">For</span> <span style="color:#006699; font-weight:bold;">Each</span> c <span style="color:#006699; font-weight:bold;">In</span> Range(<span style="color:#0000ff;">"A1:A10"</span>)
+        <span style="color:#008200;">' Use Str to convert cell value to a string</span>
+        coll.Add Str(c)
+    <span style="color:#006699; font-weight:bold;">Next</span>
+
+    <span style="color:#008200;">' Print out the collection values and type</span>
+    <span style="color:#006699; font-weight:bold;">Dim</span> i <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">Variant</span>
+    <span style="color:#006699; font-weight:bold;">For</span> <span style="color:#006699; font-weight:bold;">Each</span> i <span style="color:#006699; font-weight:bold;">In</span> coll
+        <span style="color:#006699; font-weight:bold;">Debug.Print</span> i, TypeName(i)
+    <span style="color:#006699; font-weight:bold;">Next</span>
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+In the above example we use Str to convert the value of the cell to a string. The alternative to this would be to assign the value to a string and then assigning the string to the collection. So you can see that using Str here is much more efficient.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-31"><span id="Multi_Region">Multi Region</span></h2>
+<p>The difference between the Str and CStr functions is that CStr converts based on the region. If your macros will be used in multiple regions then you will need to use CStr for you string conversions.</p>
+<p>It is good practise to use CStr when reading values from cells. If your code ends up being used in another region then you will not have to make any changes to make it work correctly.</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-32"><span id="Convert_String_to_Number-CLng_CDbl_Val_etc">Convert String to Number-&nbsp;CLng, CDbl, Val etc.</span></h1>
+
+<table id="tablepress-7" class="tablepress tablepress-id-7">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Returns</th><th class="column-3">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">CBool</td><td class="column-2">Boolean</td><td class="column-3">CBool("True"), CBool("0")</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">CCur</td><td class="column-2">Currency</td><td class="column-3">CCur("245.567")</td>
+</tr>
+<tr class="row-4 even">
+    <td class="column-1">CDate</td><td class="column-2">Date</td><td class="column-3">CDate("1/1/2017")</td>
+</tr>
+<tr class="row-5 odd">
+    <td class="column-1">CDbl</td><td class="column-2">Double</td><td class="column-3">CCur("245.567")</td>
+</tr>
+<tr class="row-6 even">
+    <td class="column-1">CDec</td><td class="column-2">Decimal</td><td class="column-3">CDec("245.567")</td>
+</tr>
+<tr class="row-7 odd">
+    <td class="column-1">CInt</td><td class="column-2">Integer</td><td class="column-3">CInt("45")</td>
+</tr>
+<tr class="row-8 even">
+    <td class="column-1">CLng</td><td class="column-2">Long Integer</td><td class="column-3">CLng("45.78")</td>
+</tr>
+<tr class="row-9 odd">
+    <td class="column-1">CVar</td><td class="column-2">Variant</td><td class="column-3">CVar("")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-7 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+The above functions are used to convert strings to various types. If you are assigning to a variable of this type then VBA will do the conversion automatically.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> StrToNumeric()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> l <span style="color:#006699; font-weight:bold;">As</span> Long, d <span style="color:#006699; font-weight:bold;">As</span> Double, c <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">Currency</span>
+    <span style="color:#006699; font-weight:bold;">Dim</span> s <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    s = <span style="color:#0000ff;">"45.923239"</span>
+
+    l = s
+    d = s
+    c = s
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Long is "</span>; l
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Double is "</span>; d
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Currency is "</span>; c
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+Using the conversion types gives more flexibility. It means you can determine the type at runtime. In the following code we set the type based on the sType argument passed to the PrintValue function. As this type can be read from an external source such as a cell, we can set the type at runtime. If we declare a variable as Long then it will always be long when the code runs.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> Test()
+    <span style="color:#008200;">' Prints  46</span>
+    PrintValue <span style="color:#0000ff;">"45.56"</span>, <span style="color:#0000ff;">"Long"</span>
+    <span style="color:#008200;">' Print 45.56</span>
+    PrintValue <span style="color:#0000ff;">"45.56"</span>, <span style="color:#0000ff;">""</span>
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+
+<span style="color:#006699; font-weight:bold;">Sub</span> PrintValue(<span style="color:#006699; font-weight:bold;">ByVal</span> s <span style="color:#006699; font-weight:bold;">As</span> String, <span style="color:#006699; font-weight:bold;">ByVal</span> sType <span style="color:#006699; font-weight:bold;">As</span> String)
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> value
+
+    <span style="color:#008200;">' Set the data type based on a type string</span>
+    <span style="color:#006699; font-weight:bold;">If</span> sType = <span style="color:#0000ff;">"Long"</span> <span style="color:#006699; font-weight:bold;">Then</span>
+        value = CLng(s)
+    <span style="color:#006699; font-weight:bold;">Else</span>
+        value = CDbl(s)
+    <span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">If</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> <span style="color:#0000ff;">"Type is "</span>; TypeName(value); value
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+If a string is not a valid number(i.e. contains symbols other numeric) then you get a “Type Mismatch” error.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> InvalidNumber()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> l <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">Long</span>
+
+    <span style="color:#008200;">' Will give type mismatch error</span>
+    l = CLng(<span style="color:#0000ff;">"45A"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-33"><span id="The_Val_Function">The Val Function</span></h2>
+<p>The value function convert numeric parts of a string to the correct number type.</p>
+<p>The Val function converts the first numbers it meets. Once it meets letters in a string it stops. If there are only letters then it returns zero as the value. The following code shows some examples of using Val</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> UseVal()
+
+    <span style="color:#008200;">' Prints 45</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Val(<span style="color:#0000ff;">"45 New Street"</span>)
+
+    <span style="color:#008200;">' Prints 45</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Val(<span style="color:#0000ff;">"    45 New Street"</span>)
+
+    <span style="color:#008200;">' Prints 0</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Val(<span style="color:#0000ff;">"New Street 45"</span>)
+
+    <span style="color:#008200;">' Prints 12</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Val(<span style="color:#0000ff;">"12 f 34"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+The Val function has two disadvantages</p>
+<p>1. <strong>Not Multi-Region&nbsp;–</strong>&nbsp;Val does not recognise international versions of numbers such as using commas instead of decimals. Therefore you should use the above conversion functions when you application will be used in multiple regions.</p>
+<p>2. <strong>Converts invalid strings to zero – </strong>This may be okay in some instances but in most cases it is better if an invalid string raises an error. The application is then aware there is a problem and can act accordingly. The conversion functions such as CLng will raise an error if the string contains non-numeric characters.</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-34"><span id="Generate_a_String_of_items_8211_String_Function">Generate a String of items – String Function</span></h1>
+
+<table id="tablepress-11" class="tablepress tablepress-id-11">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">String</td><td class="column-2">number, character</td><td class="column-3">Converts a number variable to a string</td><td class="column-4">String (5,"*")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-11 from cache -->
+<p>&nbsp;<br>
+&nbsp;<br>
+The String function is used to generate a string of repeated characters. The first argument is the number of times to repeat it, the second argument is the character.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> GenString()
+
+    <span style="color:#008200;">' Prints: AAAAA</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> String(5, <span style="color:#0000ff;">"A"</span>)
+    <span style="color:#008200;">' Prints: &gt;&gt;&gt;&gt;&gt;</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> String(5, 62)
+    <span style="color:#008200;">' Prints: (((ABC)))</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> String(3, <span style="color:#0000ff;">"("</span>) &amp; <span style="color:#0000ff;">"ABC"</span> &amp; String(3, <span style="color:#0000ff;">")"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-35"><span id="Convert_CaseUnicode_8211_StrConv_UCase_LCase">Convert Case/Unicode – StrConv, UCase, LCase</span></h1>
+<p>
+</p><table id="tablepress-14" class="tablepress tablepress-id-14">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">StrConv</td><td class="column-2">string, conversion, LCID</td><td class="column-3">Converts a String</td><td class="column-4">StrConv("abc",vbUpperCase)</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-14 from cache --><br>
+If you want to convert the case of a string to upper or lower you can use the UCase and LCase functions for upper and lower respectively. You can also use the StrConv function with the vbUpperCase or vbLowerCase argument. The following code shows example of using these three functions<p></p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ConvCase()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> s <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    s = <span style="color:#0000ff;">"Mary had a little lamb"</span>
+
+    <span style="color:#008200;">' Upper</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> UCase(s)
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrConv(s, vbUpperCase)
+
+    <span style="color:#008200;">' Lower</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> LCase(s)
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrConv(s, vbLowerCase)
+
+    <span style="color:#008200;">' Sets the first letter of each word to upper case</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> StrConv(s, vbProperCase)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+MARY HAD A LITTLE LAMB<br>
+MARY HAD A LITTLE LAMB<br>
+mary had a little lamb<br>
+mary had a little lamb<br>
+Mary Had A Little Lamb</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-36"><span id="Other_Conversions">Other Conversions</span></h2>
+<p>As well as case the StrConv can perform other conversions based on the Conversion parameter. The following table shows a list of the different parameter values and what they do. For more information on StrConv check out the <a href="https://msdn.microsoft.com/en-us/library/office/gg264628(v=office.15).aspx" target="_blank">MSDN Page</a>.</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+
+</p><table id="tablepress-16" class="tablepress tablepress-id-16">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Constant</th><th class="column-2">Value</th><th class="column-3">Converts </th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">vbUpperCase</td><td class="column-2">1</td><td class="column-3">to upper case</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">vbLowerCase</td><td class="column-2">2</td><td class="column-3">to lower case</td>
+</tr>
+<tr class="row-4 even">
+    <td class="column-1">vbProperCase</td><td class="column-2">3</td><td class="column-3">first letter of each word to uppercase</td>
+</tr>
+<tr class="row-5 odd">
+    <td class="column-1">vbWide*</td><td class="column-2">4</td><td class="column-3">from Narrow to Wide<br>
+</td>
+</tr>
+<tr class="row-6 even">
+    <td class="column-1">vbNarrow*</td><td class="column-2">8</td><td class="column-3">from Wide to Narrow</td>
+</tr>
+<tr class="row-7 odd">
+    <td class="column-1">vbKatakana**</td><td class="column-2">16</td><td class="column-3">from Hiragana to Katakana<br>
+</td>
+</tr>
+<tr class="row-8 even">
+    <td class="column-1">vbHiragana</td><td class="column-2">32</td><td class="column-3">from Katakana to Hiragana </td>
+</tr>
+<tr class="row-9 odd">
+    <td class="column-1">vbUnicode</td><td class="column-2">64</td><td class="column-3">to unicode</td>
+</tr>
+<tr class="row-10 even">
+    <td class="column-1">vbFromUnicode</td><td class="column-2">128</td><td class="column-3">from unicode</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-16 from cache --><p></p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-37"><span id="Using_Strings_With_Arrays">Using Strings With Arrays</span></h1>
+
+<table id="tablepress-12" class="tablepress tablepress-id-12">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">Split</td><td class="column-2">expression, delimiter, <br>limit, compare</td><td class="column-3">Parses a delimited string to an array</td><td class="column-4">arr = Split("A;B;C",";")</td>
+</tr>
+<tr class="row-3 odd">
+    <td class="column-1">Join</td><td class="column-2">source array, delimiter</td><td class="column-3">Converts a one dimensional array to a string</td><td class="column-4">s = Join(Arr, ";")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-12 from cache -->
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-38"><span id="String_to_Array_using_Split">String to Array using Split</span></h2>
+<p>You can easily parse a delimited string into an array. You simply use the Split function with the delimiter as parameter. The following code shows an example of using the Split function.</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> StrToArr()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> arr() <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    <span style="color:#008200;">' Parse string to array</span>
+    arr = Split(<span style="color:#0000ff;">"John,Jane,Paul,Sophie"</span>, <span style="color:#0000ff;">","</span>)
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> name <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">Variant</span>
+    <span style="color:#006699; font-weight:bold;">For</span> <span style="color:#006699; font-weight:bold;">Each</span> name <span style="color:#006699; font-weight:bold;">In</span> arr
+        <span style="color:#006699; font-weight:bold;">Debug.Print</span> name
+    <span style="color:#006699; font-weight:bold;">Next</span>
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+John<br>
+Jane<br>
+Paul<br>
+Sophie</p>
+<p>&nbsp;<br>
+&nbsp;<br>
+If you would like to see some real-world examples of using Split, you will find them in the post <a href="https://excelmacromastery.com/vba-instr/" target="_blank">How to Easily Extract From Any String Without Using VBA InStr</a>.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-39"><span id="Array_to_String_using_Join">Array to String using Join</span></h2>
+<p>If you want to build a string from an array you can do so easily using the Join function. This is essentially a reverse of the Split function. The following code provides an example of using Join</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> ArrToStr()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> Arr(0 <span style="color:#006699; font-weight:bold;">To</span> 3) <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    Arr(0) = <span style="color:#0000ff;">"John"</span>
+    Arr(1) = <span style="color:#0000ff;">"Jane"</span>
+    Arr(2) = <span style="color:#0000ff;">"Paul"</span>
+    Arr(3) = <span style="color:#0000ff;">"Sophie"</span>
+
+    <span style="color:#008200;">' Build string from array</span>
+    <span style="color:#006699; font-weight:bold;">Dim</span> sNames <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    sNames = Join(Arr, <span style="color:#0000ff;">","</span>)
+
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> sNames
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+<strong>Output</strong><br>
+John,Jane,Paul,Sophie</p>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-40"><span id="Formatting_a_String">Formatting a String</span></h1>
+<p>
+</p><table id="tablepress-13" class="tablepress tablepress-id-13">
+<thead>
+<tr class="row-1 odd">
+    <th class="column-1">Function</th><th class="column-2">Params</th><th class="column-3">Description</th><th class="column-4">Example</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+    <td class="column-1">Format</td><td class="column-2">expression, format, <br>firstdayofweek, firstweekofyear</td><td class="column-3">Formats a string </td><td class="column-4">Format(0.5, "0.00%")</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-13 from cache --><br>
+&nbsp;<br>
+&nbsp;<br>
+The Format function is used to format a string based on given instructions. It is mostly used to place a date or number in certain format. The examples below show the most common ways you would format a date.<p></p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> FormatDate()
+
+    <span style="color:#006699; font-weight:bold;">Dim</span> s <span style="color:#006699; font-weight:bold;">As</span> <span style="color:#006699; font-weight:bold;">String</span>
+    s = <span style="color:#0000ff;">"31/12/2015 10:15:45"</span>
+
+    <span style="color:#008200;">' Prints: 31 12 15</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(s, <span style="color:#0000ff;">"DD MM YY"</span>)
+    <span style="color:#008200;">' Prints: Thu 31 Dec 2015</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(s, <span style="color:#0000ff;">"DDD DD MMM YYYY"</span>)
+    <span style="color:#008200;">' Prints: Thursday 31 December 2015</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(s, <span style="color:#0000ff;">"DDDD DD MMMM YYYY"</span>)
+    <span style="color:#008200;">' Prints: 10:15</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(s, <span style="color:#0000ff;">"HH:MM"</span>)
+    <span style="color:#008200;">' Prints: 10:15:45 AM</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(s, <span style="color:#0000ff;">"HH:MM:SS AM/PM"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+The following examples are some common ways of formatting numbers</p>
+<pre style="color:#000000;background:rgb(189,215,238);"><span style="color:#006699; font-weight:bold;">Sub</span> FormatNumbers()
+
+    <span style="color:#008200;">' Prints: 50.00%</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(0.5, <span style="color:#0000ff;">"0.00%"</span>)
+    <span style="color:#008200;">' Prints: 023.45</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(23.45, <span style="color:#0000ff;">"00#.00"</span>)
+    <span style="color:#008200;">' Prints: 23,000</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(23000, <span style="color:#0000ff;">"##,000"</span>)
+    <span style="color:#008200;">' Prints: 023,000</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(23000, <span style="color:#0000ff;">"0##,000"</span>)
+    <span style="color:#008200;">' Prints: $23.99</span>
+    <span style="color:#006699; font-weight:bold;">Debug.Print</span> Format(23.99, <span style="color:#0000ff;">"$#0.00"</span>)
+
+<span style="color:#006699; font-weight:bold;">End</span> <span style="color:#006699; font-weight:bold;">Sub</span>
+</pre>
+<p>&nbsp;<br>
+&nbsp;<br>
+The Format function is quite a large topic and could use up a full post on it’s own. If you want more information then the <a href="https://msdn.microsoft.com/en-us/library/office/gg251755(v=office.15).aspx">MSDN Format Page</a> provides a lot of information.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h2 id="easyreader-41"><span id="Helpful_Tip_for_Using_Format">Helpful Tip for Using Format</span></h2>
+<p>A quick way to figure out the formatting to use is by using the cell formatting on an Excel worksheet.&nbsp;For example add a number to a cell. Then &nbsp;right click and format the cell the way you require. When you are happy with the format select Custom from the category listbox on the left. &nbsp;When you select this you can see the format string in the type textbox(see image below). This is the string format you can use in VBA.</p>
+<div id="attachment_1080" style="width: 476px" class="wp-caption alignnone"><a href="https://excelmacromastery.com/wp-content/uploads/2015/06/FormatCells.png"><img class="wp-image-1080 " src="https://excelmacromastery.com/wp-content/uploads/2015/06/FormatCells.png" alt="VBA Format Function" width="466" height="418"></a><p class="wp-caption-text"><strong><span style="color: #3366ff;">Format Cells Dialog</span></strong></p></div>
+<p><a href="#">Go back to menu</a></p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-42"><span id="Conclusion">Conclusion</span></h1>
+<p>In almost any type of programming, you will spend a great deal of time manipulating strings. This post covers the many different ways you use strings in VBA.</p>
+<p>To get the most from use the <a href="#">table at the top</a>&nbsp;to find the type of function you wish to use. Clicking on the left column of this function will bring you to that section.</p>
+<p>If you are new to strings in VBA, then I suggest you check out the <a href="#Read_This_First">Read this First</a> section before using any of the functions.</p>
+<p>&nbsp;<br>
+&nbsp;</p>
+<h1 id="easyreader-43"><span id="What8217s_Next">What’s Next?</span></h1>
+<p><strong>Free VBA Tutorial</strong> If you are new to VBA or you want to sharpen your existing VBA skills then why not try out the <a href="https://excelmacromastery.com/vba-tutorial-1/" target="_blank">The Ultimate VBA Tutorial</a>.</p>
+<p><strong>Related Training:</strong> Get full access to the <a href="https://excelmacromastery.com/access_vault/" rel="noopener" target="_blank">Excel VBA training webinars and all the tutorials</a>.</p>
+<p>(<strong>NOTE:</strong> Planning to build or manage a VBA Application? <a href="https://www.theexcelvbahandbook.com/">Learn how to</a> build 10 Excel VBA applications from scratch.)</p>
+
+<p></p>
+                            </div>
+
+    </div>
+
+
+
+
+
+
+                <!-- xxxxxxxxxxxxxxxxxxx-->
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   
+</body>
+
+</html>
+<!-- https://www.codeply.com/go/EuirMfjkYZ -->
