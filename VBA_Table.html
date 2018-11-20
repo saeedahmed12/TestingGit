@@ -71,7 +71,48 @@
             <td  headers="t416641_row_0col_0" data-header="Topic">Workbook/Worksheet Objects</td>
             <td  headers="t416641_row_0col_1" data-header="Template/Examples"><a href="https://www.excel-easy.com/vba/workbook-worksheet-object.html">Excel Easy</a>
                 <br> <code>Application.Workbooks("create-a-macro").Worksheets(1).Range("A1").Value = "Hello"</code> <br>
-                Workbooks collection contains all the Workbook objects that are currently open. The Worksheets collection contains all the Worksheet objects in a workbook <br>    
+                Workbooks collection contains all the Workbook objects that are currently open. The Worksheets collection contains all the Worksheet objects in a workbook <br> 
+                <code>
+                MsgBox ActiveSheet.Index <br>
+                MsgBox ActiveSheet.CodeName <br>
+
+                <pre class="code">
+                  Workbooks("V2.xlsm").Activate
+Workbooks("V2.xlsm").Worksheets("Sheet6").[D17].Value = 13
+
+
+Worksheets.Add
+Worksheets.Add After:=Worksheets(2)
+Worksheets.Add After:=Sheets(Sheets.Count), Count:=3
+Worksheets.Add before:=sheet2   ' := specifies arguments
+Worksheets.Add.Name = "Found_Text" 
+Sheets.Add Type:=XlSheetType.xlChart, Count:=5
+Sheets.Add Type:=XlSheetType.xlDialogSheet
+Sheets.Add Type:=XlSheetType.xlExcel4IntlMacroSheet
+Sheets.Add Type:=XlSheetType.xlExcel4MacroSheet
+Sheets(Sheets.Count).Delete
+Sheet1.Delete
+Sheets("Sheet2").Delete
+Worksheets("sheet2").Activate  'name
+Worksheets(1).Activate    'index
+Worksheets(Sheet3).Activate 'codename
+Sheet2.Activate     'codename
+Charts("Chart1").Activate
+Sheets("Sheet3").Activate
+Sheet2.Copy After:=Sheet2
+Sheet2.Move Before:=Sheet2
+Sheet4.Name = "different"
+Sheets("different").Visible = xlSheetHidden
+Sheets("different").Visible = xlSheetVisible
+Sheets("different").Visible = xlSheetVeryHidden
+Sheets("different").Visible = xlSheetVisible
+
+
+Worksheets("Sheet3").Range("C17").Value = "d"
+Worksheets("Sheet3").[D17].Value = 13
+Worksheets("Sheet3").Cells(17, 5) = #3/3/2017#
+                </pre>
+                </code>  
             </td>
        </tr>
 
@@ -86,7 +127,45 @@
             <code>Dim example As Range <br>
             Set example = Range("A1:C4") example.Select</code> <br><br>
             <code>Dim example As Range <br>    
-            Set example = Range("A1:C4") example.Rows(3).Select</code><br>
+            Set example = Range("A1:C4") <br>
+            example.Rows(3).Select</code><br><br><br>
+
+            <pre class="code">
+              Worksheets("Sheet1").Range("A1:G37").ClearFormats
+Range("B1").Value = Environ("Username")
+Range("A1:A3").Font.Color = vbBlue
+Range("A1:A3").Interior.Color = rgbAquamarine
+Range("A1:C1").Select
+Range("A4", "C8").Interior.Color = rgbWhite
+Range(Cells(1, 4), Cells(1, 8)).Interior.Color = Default
+[A3:C3].Interior.ColorIndex = xlNone
+Range("a").Font.Italic = True   'named range
+Range("A" & i).Select     'for use in loop using i as integer, moving down rows
+Cells(1, i).Select    'for use in loop using i as integer, moving down rows
+Cells(i,1).Select   'for use in loop using i as integer, moving across columns
+Range(ActiveCell, ActiveCell.Offset(0, 1)).Select     'relative select multiple cells
+Range("C1", Range("C1").End(xlDown).End(xlToRight)).Select    'select block of text, BUT be careful
+Range("A1:A3", "C1:C3").Select
+Range("A1:A3, C1:C3").Select      'this allows discontinous selection
+Range("B1:C10,H:H").Select    'another discontinous selection
+Range("B1:C10,12:12").Select    'another discontinous selection
+Range("C1").CurrentRegion.Copy
+Range("A1").PasteSpecial xlPasteColumnWidths      'this will paste content and column widths
+Range("B1:C10,H:H").EntireColumn.AutoFit
+
+Cells(6, 3).Select
+ActiveCell.Value = 12
+[D27].Activate
+
+ActiveCell.End(xlDown).Select       'moves down to last cell assuming no blanks
+ActiveCell.End(xltoRight).Select      'moves to last cell to right assuming no blanks
+ActiveCell.Row
+
+
+
+Columns("A:C").AutoFit
+Range("17:21").EntireRow.AutoFit   'have to use entireRow or entirecolumn if range property is used
+            </pre>
 
             </td>
        </tr>
@@ -145,6 +224,19 @@
                         Cells(i, 1).Value = 20
                         i = i + 1
                     Loop
+
+
+                    Dim ChrisSheet As Worksheet
+                    Application.DisplayAlerts = False
+                    For Each ChrisSheet In ActiveWorkbook.Sheets
+
+                        If ChrisSheet.Index <> 1 Then
+                            ChrisSheet.Delete
+                        End If
+                    Next ChrisSheet
+                    Application.DisplayAlerts = True
+                    End Sub
+
 
 
                 </pre>
