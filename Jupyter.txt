@@ -1,0 +1,11 @@
+jupyter notebook
+
+Once installed (via Anaconda), in cmd line in windows, type "jupyter notebook"
+
+To open a new notebook choose new and then "python 3"
+
+"shift-enter" to run code
+-select "markdown" for comments
+-help tab for 'keyboard shortcuts'
+-In Kernel tab, can use "restart"
+-download as .....
