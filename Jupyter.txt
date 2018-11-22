@@ -1,6 +1,6 @@
 jupyter notebook
 
-Once installed (via Anaconda), in cmd line in windows, type "jupyter notebook"
+Once installed (via Anaconda), in cmd line in windows, navigate to appropriate directory, and type "jupyter notebook"
 
 To open a new notebook choose new and then "python 3"
 
