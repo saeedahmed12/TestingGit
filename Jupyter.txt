@@ -9,3 +9,19 @@ To open a new notebook choose new and then "python 3"
 -help tab for 'keyboard shortcuts'
 -In Kernel tab, can use "restart"
 -download as .....
+
+
+
+WORKING WITH CONDA
+Install and login:            http://docs.anaconda.com/anaconda-cloud/user-guide/howto/
+Working with notebooks:       http://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-notebooks/
+repo:                         https://anaconda.org/saeed19/notebooks
+url for example NB:           http://notebooks.anaconda.org/<USERNAME>/my-notebook
+
+COMMANDS
+Sequence:  local notebook-> edit-> upload -> download-> edit -> upload.....
+anaconda login
+anaconda upload my-notebook.ipynb
+
+
+Also look at binder which works with Github: https://mybinder.org/
