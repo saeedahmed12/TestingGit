@@ -44,3 +44,19 @@ If git already in place in local folder (this worked even though the local repo 
 3. If remote repository has been set up, then use git push (or in some cases git push current branch)
 
 if git has not been set up locally, then follow instructions in tutorial to set it up, or use the process above in Atom.
+
+
+Commands using unix interface:
+
+  225  cd "C:\Users\Ahmed\OneDrive\Documents\for online content\forProgmWebsites\github"
+  226  ls
+  227  git status
+  228  git config --get remote.origin.url
+  229  git add
+  230  git status
+  231  git add -A
+  232  git commit -m "new"
+  233  git push
+
+
+
