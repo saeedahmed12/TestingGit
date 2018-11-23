@@ -18,6 +18,9 @@ How to use with Atom:
 -in command palette in Atom, type 'git clone'
 -enter the respository's url
 -enter local folder path
+-folder on local drive where repo is cloned to must be empty to start
+-the first file that is in the repo should be created remotely and this is automatically pulled when the remote repo is cloned
+-after that other files can be pushed
 
 2. 'Toggle Git Tab'
 
