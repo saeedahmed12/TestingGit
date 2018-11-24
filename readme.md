@@ -10,6 +10,9 @@ https://github.com/mjhea0/thinkful-mentor/blob/master/git-workflow.md
 If changes made remotely, then this worked (but need to be careful) to bring back in to local:
 git pull https://github.com/saeedahmed12/TestingGit.git
 
+How to use with VS studio Code:
+https://lh3.googleusercontent.com/BUqno_MU9v4mxOqYhD1i2xeYvjkm3chuE7FVbkhmBD6OiiJ2Y7fNpYydbSAQhI05f1CFjXwyWOQwHCZD8zw8EW-LKd37llKnROjZYGpV3GCs70-TmPSkYcsG9nV0nUFu2rnWdWwcXVW2AAJDgP3jgGQ9quUg4HoHHBSAsGKjQZ5MZ7_nq3nDPVD0iF8JohlJfFYe2kqv0Eg0G7_o9ZF_IrGi8EvEX25qungbR9CRgyEyDPUECR2bnt9OuwTfhRgWpP2AdsBfGOKToi6HKoMi9q-_TFD9yI0gthrlNu47S4JSi11t6cX3mCYfjjWMMXcxTM6VmSMmJcwyG_MTmvyIIrSyINVuHKlXz06Kq7ocMhfSYdPZ6b7GjLb9xrl6zHKsJoxrq5siBWs-GLyYmZTrXfqHNKhx5Knwocdj8AHMXlQb5onQuV-CvhfbuIBPKwfYbgTywyyoFr2wPCXejmVnDsYRkSozxR_chRRAEKJ5Ih1_0tE8iAtaIZK1EU43wEhwyp1X2bP7DS2jLm5NwEGbQCX-CvSRynDaFdW8LDulvcoPTLnr7JQQUPF10Of0jAaZ6UIYgvHRB_dbcr7JcT_A-sKsibEuyOYFfWZH4I2_VaBB5loP-ohwdPnqLMMs-Lc7B9LBUY0IEBswF52YpTZGv8j9=w734-h978-no
+
 
 How to use with Atom:
 (see this video:https://www.youtube.com/watch?v=TzKi6ZZtIAo)
@@ -57,6 +60,5 @@ Commands using unix interface:
   231  git add -A
   232  git commit -m "new"
   233  git push
-
 
 
