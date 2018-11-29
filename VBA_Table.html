@@ -31,6 +31,16 @@
   <ul>
     <li><a href="https://1drv.ms/x/s!Aga_4YO2d91u7ktIuOUt7I_fjWUy">One drive link to VBA excel sheet</a></li>
     <li>explorer -> C:\Users\Ahmed\OneDrive\Documents\for online content\VBA.xlsm</li>
+    <li>How to extract links
+      <pre>
+      <code>
+Sub Extract_Link()
+ Dim r As Range
+ For Each r In Selection
+ lnk = r.Hyperlinks(1).Address
+ r.Offset(0, 1).Value = lnk
+ Next
+End Sub</code></pre></li>
   </ul>
   <hr>
   <!-- ---------------------------------------------------------------------- -->
