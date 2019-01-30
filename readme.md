@@ -1,5 +1,7 @@
 This directory was created on 10.30.18 for me to learn how to use github and git.
 
+My main github directory is here:  https://github.com/saeedahmed12
+
 I am using this video for guidance:
 https://www.youtube.com/watch?v=9xePqfHP7k8
 
@@ -62,4 +64,4 @@ Commands using unix interface:
   233  git push
 
 
-c
+
